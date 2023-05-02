@@ -15,6 +15,7 @@ with col1:
     
 with col2:
     # choose the source 
+    st.markdown('Source:')
     # option_source = st.radio('Sources:', ['News'])
     st.checkbox('News', key="option_source_news")
     # st.checkbox('News', key="option_source_news")
