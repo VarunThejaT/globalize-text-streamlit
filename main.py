@@ -42,6 +42,9 @@ def load_LLM(openai_api_key):
     llm = OpenAI(temperature=.7, openai_api_key=openai_api_key)
     return llm
 
+st.session_state.option_source_news = False
+st.session_state.option_company = ""
+
 st.set_page_config(page_title="Sortino", page_icon=":robot:")
 st.header("Sortino")
 
@@ -49,11 +52,13 @@ col1, col2 = st.columns(2)
 with col1:
     # choose the company - this should be a pretty quick lookup of all the options available
     # for demo purposes, we would have just one drop down
-    option_company = st.selectbox( 'Company?', ['Netflix'])
+    st.selectbox( 'Company?', ['Netflix'], key="option_company")
     
 with col2:
-    st.markdown('Sources:')
-    option_dialect = st.radio('News')
+    # choose the source 
+    # option_source = st.radio('Sources:', ['News'])
+    st.checkbox('News', key="option_source_news")
+    # st.checkbox('News', key="option_source_news")
 
 def get_text():
     input_text = st.text_area(label="what is your query?", label_visibility='collapsed', placeholder="Your query...", key="text_input")
