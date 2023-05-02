@@ -49,11 +49,11 @@ col1, col2 = st.columns(2)
 with col1:
     # choose the company - this should be a pretty quick lookup of all the options available
     # for demo purposes, we would have just one drop down
-    option_company = st.selectbox( 'Company?', ('Netflix'))
+    option_company = st.selectbox( 'Company?', ['Netflix'])
     
 with col2:
     st.markdown('Sources:')
-    option_dialect = st.radio(('News'))
+    option_dialect = st.radio('News')
 
 def get_text():
     input_text = st.text_area(label="what is your query?", label_visibility='collapsed', placeholder="Your query...", key="text_input")
