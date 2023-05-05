@@ -39,7 +39,7 @@ def main():
         st.session_state.chat_history.append(("Chatbot", response))
 
         # Clear the input field
-        st.text_input("Enter your message:", value='', key=1)
+        # st.text_input("Enter your message:", value='', key=1)
 
     # Display the chat history
     for sender, message in st.session_state.chat_history:
