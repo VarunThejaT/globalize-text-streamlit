@@ -32,10 +32,10 @@ def main():
     # Button to send the message
     if st.button("Send", type='secondary', help="Click to query"):
         # Append the user's message to the chat history
-        st.session_state.chat_history.append(("You", user_input))
+        st.session_state.chat_history.append(("You", text_input))
 
         # Simulate a response from the chatbot (you can replace this with your own logic)
-        response = "Hello, I am a chatbot. You said: " + user_input
+        response = "Hello, I am a chatbot. You said: " + text_input
         st.session_state.chat_history.append(("Chatbot", response))
 
         # Clear the input field
